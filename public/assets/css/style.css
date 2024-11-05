@@ -1,0 +1,40 @@
+.card-text {
+    display: -webkit-box;                /* Define a flexible box layout */
+    -webkit-line-clamp: 3;               /* Limit the text to 3 lines */
+    -webkit-box-orient: vertical;        /* Set the box layout to vertical */
+    overflow: hidden;                    /* Hide overflowed text */
+    text-overflow: ellipsis;             /* Show ellipsis (...) when text overflows */
+}
+i .sub-navbar-icons{
+    margin-top:1rem;
+}
+
+/* Sidebar styling */
+.sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    margin: 0 10px 0 10px;
+    padding: 10px 8px 10px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    display: block;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+.sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+}

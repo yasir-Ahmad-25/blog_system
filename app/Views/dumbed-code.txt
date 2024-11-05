@@ -1,0 +1,7 @@
+<!-- Status -->
+
+    <!-- <label>Status</label>
+    <input type="radio" id="draft" name="status" value="draft" checked>
+    <label for="draft">Draft</label>
+    <input type="radio" id="published" name="status" value="published">
+    <label for="published">Published</label> -->
