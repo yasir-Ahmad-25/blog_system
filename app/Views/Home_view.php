@@ -14,7 +14,14 @@
                 <div class="card p-2 mt-2 shadow-sm bg-body rounded" style="width: 20rem;">
                     <img src="./assets/images/uploads/posts/<?= $post['image']; ?>" class="card-img-top w-50 mx-auto" alt="..." style="height: 200px; object-fit: cover;">
                     <div class="card-body">
-                        <h5 class="card-title"><?= $post['title']; ?></h5>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img src="./assets/images/uploads/profile_images/<?= $post['profile_image']; ?>" class="circle w-50 mx-auto" alt="..." style="width:20px;height: 20px; object-fit: cover;">
+                            </div>
+                            <div class="col-md-10">
+                                <h5 class="card-title"><?= $post['title']; ?></h5>
+                            </div>
+                        </div>
                         <hr>
                     </div>
                     <p class="card-text px-2"><?= $post['content']; ?></p>

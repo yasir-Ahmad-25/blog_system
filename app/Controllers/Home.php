@@ -62,11 +62,19 @@ class Home extends BaseController
 
         $userId = session()->get('id'); 
 
+        // $join_userTable = ;
         $user = $usermodel->where('id', $userId)->first();
         $data['user'] =  $user;
-        $all_posts = $model->findAll();
+        $all_posts = $model->join('users','users.id = posts.user_id' , 'left')->findAll();
         $data['categories'] = $categories;
         $data['All_Posts'] = $all_posts;
+
+
+        
+        // echo "<pre>";
+        // print_r($all_posts);
+        // echo "<pre>";
+        // return "Hey";
         return view('Home_view', $data);
     }
 }
