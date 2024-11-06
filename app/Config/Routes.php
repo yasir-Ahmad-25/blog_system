@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/category/(:alpha)', 'Home::viewThisCategory/$1');
+$routes->get('/Blog/(:any)', 'Home::Blog/$1');
 
 
 // DASHBOARD

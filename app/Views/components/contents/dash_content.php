@@ -52,7 +52,7 @@
 <table class="table table-secondary table-striped" style="border-radius:5px;">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <!-- <th scope="col">#</th> -->
       <th scope="col">BLOG</th>
       <th scope="col">created</th>
       <th scope="col">interactions</th>
@@ -62,8 +62,8 @@
   <tbody>
     <?php foreach($Recent_Activities as $Recent_Activity): ?>
     <tr>
-      <th scope="row"><?= $Recent_Activity['id']; ?></th>
-      <td><?= $Recent_Activity['title']; ?></td>
+      <!-- <th scope="row"><?php //$Recent_Activity['id']; ?></th> -->
+      <td style="width: 500px;"><?= $Recent_Activity['title']; ?></td>
       <td><?= $Recent_Activity['created_at']; ?></td>
       <td><i class="fa-sharp fa-solid fa-heart" style="color: #d8133a;"></i> 50  -- <i class="fa-solid fa-comment" style="color: #FFD43B;"></i> 10 </td> 
       <td>

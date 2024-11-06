@@ -25,6 +25,7 @@ class Dashboard extends BaseController{
 
         $BlogsCount = $model->where('user_id', $userId)->countAllResults();
         $Un_published_Blogs = $model->where('status', 'False')->where('user_id', $userId)->countAllResults();
+        // $Recent_Activities = $model->where('status','True')->where('user_id',$userId)->orderBy('created_at', 'DESC')->findAll();
         $Recent_Activities = $model->where('status','True')->where('user_id',$userId)->orderBy('created_at', 'DESC')->findAll();
         
         $data['Blogs'] =  $BlogsCount;
@@ -180,7 +181,9 @@ class Dashboard extends BaseController{
         ];
         // Get the blog post data by ID to pre-fill the form and check the existing image
         $model = new BlogModel();
+        $userModel = new UserModel();
         $post = $model->find($id);
+        $user = $userModel->find($userId);
         $data['post'] = $post;
         if (!$post) {
             // Handle the case where the post does not exist
@@ -231,6 +234,7 @@ class Dashboard extends BaseController{
             ],
         ];
         $data['categories'] = $categories;
+        $data['user'] = $user;
 
         if ($this->request->getMethod() === 'POST') {
             // Validation rules
@@ -290,6 +294,7 @@ class Dashboard extends BaseController{
                 $model->save($updatedData);
     
                 $data['post'] = $post;
+               
                 // Redirect back to the dashboard
                 return redirect()->to(base_url('dashboard'));
 

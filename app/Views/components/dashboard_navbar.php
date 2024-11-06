@@ -9,12 +9,13 @@
         <li class="nav-item">
           <a class="nav-link" href="/dashboard">dashboard</a>
         </li>
+        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <?php if($user['profile_image']): ?>
-              <img src="../assets/images/uploads/profile_images/<?= $user['profile_image']; ?>" alt="Profile" style="width: 20px; height: 20px; margin-bottom: .2rem;">
+              <img src="../../assets/images/uploads/profile_images/<?= $user['profile_image']; ?>" alt="" style="width: 20px; height: 20px; margin-bottom: .2rem;">
             <?php else: ?>
-              <img src="../assets/images/user.png" alt="Profile" style="width: 20px; height: 20px; margin-bottom: .2rem;">
+              <img src="../../assets/images/user.png" alt="" style="width: 20px; height: 20px; margin-bottom: .2rem;">
             <?php endif; ?>
             <?= $user['username']; ?>
           </a>

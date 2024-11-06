@@ -17,17 +17,17 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <?php if($user['profile_image']): ?>
-                <img src="../assets/images/uploads/profile_images/<?= $user['profile_image']; ?>" class="rounded" alt="Profile" style="width: 20px; height: 20px; margin-bottom: .2rem;">
+                <img src="../assets/images/uploads/profile_images/<?= $user['profile_image']; ?>" class="rounded" alt="" style="width: 20px; height: 20px; margin-bottom: .2rem;">
               <?php else: ?>
                   <img src="../assets/images/user.png" class="rounded" alt="Profile" style="width: 20px; height: 20px; margin-bottom: .2rem;">
               <?php endif; ?>
               <?= $user['username']; ?>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">My Profile</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <!-- <li><a class="dropdown-item" href="">My Profile</a></li> -->
+              <li><a class="dropdown-item" href="../dashboard/update_profile">Settings</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Logout</a></li>
+              <li><a class="dropdown-item" href="../Auth/Logout">Logout</a></li>
             </ul>
           </li>
         </ul>

@@ -12,7 +12,11 @@
         <?php foreach($All_Posts as $post): ?>
             <div class="col-md-3 mb-4">
                 <div class="card p-2 mt-2 shadow-sm bg-body rounded" style="width: 20rem;">
-                    <img src="./assets/images/uploads/posts/<?= $post['image']; ?>" class="card-img-top w-50 mx-auto" alt="..." style="height: 200px; object-fit: cover;">
+                    <?php if($post['image']): ?>
+                        <img src="./assets/images/uploads/posts/<?= $post['image']; ?>" class="card-img-top w-50 mx-auto" alt="Blog Image" style="height: 200px; object-fit: cover;">
+                    <?php else: ?>
+                        <img src="./assets/images/Blog_placeholder.jpg" class="card-img-top w-50 mx-auto" alt="..." style="height: 200px; object-fit: cover;">
+                    <?php endif ?>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-2">
@@ -30,7 +34,7 @@
                     </div>
                     <p class="card-text px-2"><?= $post['content']; ?></p>
                         <!-- <div class="col-md-12"> -->
-                            <a href="view_Blog/<?= $post['id']; ?>" class="btn btn-primary">R E A D - M O R E 📑</a>
+                            <a href="Blog/<?= $post['id']; ?>" class="btn btn-primary">R E A D - M O R E 📑</a>
                         <!-- </div> -->
                 </div>
             </div>

@@ -10,7 +10,7 @@
         <?php foreach($categories as $category): ?>
           <li class="nav-item d-flex mx-3">
               <i class="<?= $category['icon']; ?>" style="margin-top:12px; font-size:12px;"></i>
-            <a href="category/<?= $category['name']; ?>" class="nav-link active" aria-current="page" href="#" style="font-size:14px;"><?= $category['name']; ?></a>
+            <a href="../category/<?= $category['name']; ?>" class="nav-link active" aria-current="page" href="#" style="font-size:14px;"><?= $category['name']; ?></a>
           </li>
         <?php endforeach; ?>
         

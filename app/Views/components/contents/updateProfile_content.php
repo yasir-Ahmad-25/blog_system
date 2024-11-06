@@ -19,7 +19,11 @@
                     
                     <div class="image-preview-container">
                         <!-- Make the image clickable -->
+                    <?php if($user['profile_image']): ?>
                         <img id="profilePreview" src="../assets/images/uploads/profile_images/<?= $user['profile_image']; ?>"  alt="Profile Image" class="img-fluid rounded-circle clickable" style="width: 150px; height: 150px; cursor: pointer; object-fit: cover;">
+                    <?php else: ?>
+                        <img id="profilePreview" src="../assets/images/user.png"  alt="Profile Image" class="img-fluid rounded-circle clickable" style="width: 150px; height: 150px; cursor: pointer; object-fit: cover;">
+                    <?php endif; ?>
                     </div>
                     <label for="profile_image">Profile Image</label>
                     <!-- Hidden file input -->

@@ -147,4 +147,26 @@ class Home extends BaseController
         // return "we are ".$category." RightNow";
         return view('category_view',$data);
     }
+
+
+    // Read more ( show Blog page according to the choosen blog )
+    public function Blog($blog_id){
+        $data = [
+            'page_title' => 'BLOG PAGE',
+        ];
+
+
+        $model = new BlogModel();
+        $usermodel = new UserModel();
+
+        $userId = session()->get('id'); 
+
+        
+        $user = $usermodel->where('id', $userId)->first();
+        $blog = $model->find($blog_id);
+        $data['user'] =  $user;
+        $data['Blog'] =  $blog;
+
+        return view('Blog', $data);
+    }
 }
