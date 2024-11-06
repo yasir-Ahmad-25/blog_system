@@ -12,7 +12,7 @@ class Home extends BaseController
             'page_title' => "H O M E"
         ];
 
-                // custom-categories
+        // custom-categories
         $categories = [
             [
                 'name' => 'Technology',
@@ -76,5 +76,75 @@ class Home extends BaseController
         // echo "<pre>";
         // return "Hey";
         return view('Home_view', $data);
+    }
+
+    // view Blogs according to the choosen categories
+    public function viewThisCategory($category){
+        // custom-categories
+        $categories = [
+            [
+                'name' => 'Technology',
+                'icon' => 'fas fa-solid fa-microchip'
+            ],
+
+            [
+                'name' => 'Health',
+                'icon' => 'fa-solid fa-notes-medical'
+            ],
+            [
+                'name' => 'Travel',
+                'icon' => 'fa-solid fa-plane-departure'
+            ],
+            [
+                'name' => 'Finance',
+                'icon' => 'fa-solid fa-coins'
+            ],
+            [
+                'name' => 'Lifestyle',
+                'icon' => 'fa-solid fa-person'
+            ],
+            [
+                'name' => 'Food',
+                'icon' => 'fa-solid fa-bowl-food'
+            ],
+            [
+                'name' => 'Parenting',
+                'icon' => 'fa-solid fa-person-breastfeeding'
+            ],
+            [
+                'name' => 'Business',
+                'icon' => 'fa-solid fa-briefcase'
+            ],
+            [
+                'name' => 'Fashion',
+                'icon' => 'fa-solid fa-vest-patches'
+            ],
+            [
+                'name' => 'Entertainment',
+                'icon' => 'fa-solid fa-gamepad'
+            ],
+        ];
+
+        $data = [
+            'page_title' => $category,
+            'categories' => $categories,
+            'category' => $category
+        ];
+
+
+        $model = new BlogModel();
+        $usermodel = new UserModel();
+
+        $userId = session()->get('id'); 
+
+        
+        $user = $usermodel->where('id', $userId)->first();
+        $data['user'] =  $user;
+        $category_posts = $model->where('category',$category)->join('users','users.id = posts.user_id' , 'left')->findAll();
+        $data['categories'] = $categories;
+        $data['category_posts'] = $category_posts;
+
+        // return "we are ".$category." RightNow";
+        return view('category_view',$data);
     }
 }
