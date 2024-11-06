@@ -32,31 +32,31 @@
             <div class="col-md-8">
                 <div class="form-group">
                     <label for="#">Firstname</label>
-                    <input type="text" class="form-control" name="firstname" value="<?= set_value('firstname')?>">
+                    <input type="text" class="form-control" name="firstname" value="<?= set_value('firstname')?>" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="#">Lastname</label>
-                    <input type="text" class="form-control" name="lastname" value="<?= set_value('lastname')?>">
+                    <input type="text" class="form-control" name="lastname" value="<?= set_value('lastname')?>" placeholder="Enter your firstname">
                 </div>
 
                 <div class="form-group mt-2">
                     <label for="#">Username</label>
-                    <input type="text" class="form-control" name="username" value="<?= set_value('username')?>">
+                    <input type="text" class="form-control" name="username" value="<?= set_value('username')?>" placeholder="Enter your lastname">
                 </div>
 
                 <div class="form-group mt-2">
                     <label for="#">Email</label>
-                    <input type="email" class="form-control" name="Email" value="<?= set_value('Email')?>">
+                    <input type="email" class="form-control" name="Email" value="<?= set_value('Email')?>" placeholder="Enter your Email">
                 </div>
 
                 <div class="form-group mt-2">
                     <label for="#">Password</label>
-                    <input type="password" class="form-control" name="password" value="<?= set_value('password')?>">
+                    <input type="password" class="form-control" name="password" value="<?= set_value('password')?>" placeholder="Enter your password">
                 </div>
 
                 <div class="form-group mt-2">
                     <label for="#">Confirm Password</label>
-                    <input type="password" class="form-control" name="password_confirm" value="<?= set_value('password_confirm')?>">
+                    <input type="password" class="form-control" name="password_confirm" value="<?= set_value('password_confirm')?>" placeholder="confirm your password">
                 </div>
 
                 <button type="submit" class="btn w-100 mt-2" style="background-color: #74C0FC">REGISTER</button>

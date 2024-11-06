@@ -15,12 +15,12 @@
             
             <div class="form-group mt-2">
                 <label for="#">username</label>
-                <input type="text" class="form-control" name="username" value="<?= set_value('username')?>">
+                <input type="text" class="form-control" name="username" value="<?= set_value('username')?>" placeholder="Enter your username">
             </div>
 
             <div class="form-group mt-2">
                 <label for="#">password</label>
-                <input type="password" class="form-control" name="password" value="<?= set_value('password')?>">
+                <input type="password" class="form-control" name="password" value="<?= set_value('password')?>" placeholder="Enter your password">
             </div>
 
             <button type="submit" class="btn w-100 mt-2" style="background-color: #74C0FC">LOGIN</button>
